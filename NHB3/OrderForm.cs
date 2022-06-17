@@ -74,18 +74,20 @@ namespace NHB3
             this.rbSA.Enabled = false;
             this.rbASIA.Enabled = false;
 
-            foreach (String market in markets) {
-                if (market.Equals("EU")) {
+            foreach (String market in markets)
+            {
+                if (market.Equals("EU"))
+                {
                     this.rbEU.Enabled = true;
-                } 
+                }
                 else if (market.Equals("EU_N"))
                 {
                     this.rbEUN.Enabled = true;
-                } 
+                }
                 else if (market.Equals("USA"))
                 {
                     this.rbUSA.Enabled = true;
-                } 
+                }
                 else if (market.Equals("USA_E"))
                 {
                     this.rbUSAE.Enabled = true;
@@ -98,7 +100,7 @@ namespace NHB3
                 {
                     this.rbASIA.Enabled = true;
                 }
-            }            
+            }
 
             //set lbls
             this.priceLbl.Text = ac.currency + "/" + this.algo["displayMarketFactor"] + "/day";

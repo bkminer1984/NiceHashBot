@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using RestSharp;
 
 namespace NHB3
 {
@@ -132,10 +133,10 @@ namespace NHB3
                 request.AddHeader("X-Organization-Id", this.orgId);
             }
 
-            var response = client.Execute(request, RestSharp.Method.GET);
+            var response = client.Execute(request, RestSharp.Method.Get);
             Console.Out.WriteLine("res: [" + response.Content + "]");
 
-            if (response.StatusCode != HttpStatusCode.OK) 
+            if (response.StatusCode != HttpStatusCode.OK)
             {
                 return "{error_id: -1}";
             }
@@ -168,7 +169,7 @@ namespace NHB3
                 request.AddHeader("X-Request-Id", Guid.NewGuid().ToString());
             }
 
-            var response = client.Execute(request, RestSharp.Method.POST);
+            var response = client.Execute(request, RestSharp.Method.Post);
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Out.WriteLine("res: [" + response.Content + "]");
 
@@ -198,7 +199,7 @@ namespace NHB3
                 request.AddHeader("X-Request-Id", Guid.NewGuid().ToString());
             }
 
-            var response = client.Execute(request, RestSharp.Method.DELETE);
+            var response = client.Execute(request, RestSharp.Method.Delete);
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Out.WriteLine("res: [" + response.Content + "]");
 
